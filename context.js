@@ -18,6 +18,13 @@
   getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 */
   
+const user = {
+  username: "",
+  email: "",
+  getUsername: function() {
+    return this.username
+  }
+}
 
 //Code Here
 
@@ -41,6 +48,8 @@ class Animal {
   }
 }
 
+const animal1 = new Animal("Bughuul","cat","kibble")
+
 //Code Here
 
 
@@ -61,6 +70,8 @@ let who = {
   location: 'Belize'
 }
 
+const whoSaysHi = sayHi.bind(who)
+
 //Code Here
 
 
@@ -76,7 +87,7 @@ function whatIsThis() {
 }
 
 // uncomment the line below and tell us what the context of "this" is for whatIsThis()
-//let context1 = ???
+let context1 = window
 
 let product = {
   name: 'snake plant',
@@ -87,7 +98,7 @@ let product = {
 let func = whatIsThis.bind(product)
 
 // uncomment the line below and tell us what the context of "this" is when we invoke func
-//let context2 = ???
+let context2 = product
 
 let vacation = {
   location: 'Hawaii',
@@ -98,7 +109,7 @@ let vacation = {
 }
 
 // uncomment the line below and tell us what the context of "this" is when we invoke vacation.whatIsThis
-//let context3 = ???
+let context3 = vacation
 
 
 class Family {
@@ -116,4 +127,4 @@ class Family {
 let family1 = new Family(2, 4, 1)
 
 // uncomment the line below and tell us what the context of "this" is for the instance of Family created above.
-//let context4 = ???
+let context4 = family1
